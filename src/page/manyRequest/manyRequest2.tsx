@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
+import {rootPath} from "../../index";
 
 interface IPostID {
     id: number,
@@ -23,7 +24,7 @@ function UserPosts({ userId = 1 }) { // Задаем значение по ум�
 
     return (
         <div>
-            <Link to="/">Home</Link>
+            <Link to={rootPath + "/"}>Home</Link>
             <button onClick={() => setReload(true)}>Reload Posts</button>
     <ul>
     {posts.map(post => (

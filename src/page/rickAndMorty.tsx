@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import {rootPath} from "../index";
 
 export default function () {
     const [characters, setCharacters] = useState([]);
@@ -37,7 +38,7 @@ export default function () {
 
     return (
         <div>
-            <Link to="/">Home</Link>
+            <Link to={rootPath + "/"}>Home</Link>
             {characters.length === 0 ? (
                 <div>Loading...</div>
             ) : (
