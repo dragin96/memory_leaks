@@ -9,7 +9,7 @@ interface IPostID {
 
 function UserPosts({ userId = 1 }) {
     const [posts, setPosts] = useState([] as IPostID[]);
-    const [isReload, setReload] = useState(false);
+    const [, setReload] = useState(false);
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
