@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Set a branch to trigger deployment
+      - master  # Set a branch to trigger deployment
 
 jobs:
   build-and-deploy:
