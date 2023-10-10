@@ -1,26 +1,53 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Analitic from "./page/Analitic";
-import {Menu} from "./page/Blank";
+import './index.css';
+import Analitic from './page/Analitic';
+
+import {
+    createBrowserRouter,
+    RouterProvider
+} from "react-router-dom";
 import RickAndMorty from "./page/rickAndMorty";
+import {Menu} from "./page/Blank";
 import ManyRequest from "./page/manyRequest/manyRequest";
 import ManyRequest2 from "./page/manyRequest/manyRequest2";
 import EventResize from "./page/evenResize";
 import {Fib} from "./page/fib";
-// ... (other imports)
 
-const App = () => (
-    <Router initialEntries={['/memory_leaks']} initialIndex={0}>
-        <Routes>
-            <Route path="/" element={<Menu />} />
-            <Route path="/analytics" element={<Analitic />} />
-            <Route path="/listener" element={<RickAndMorty />} />
-            <Route path="/manyRequest" element={<ManyRequest />} />
-            <Route path="/manyRequest2" element={<ManyRequest2 />} />
-            <Route path="/eventResize" element={<EventResize />} />
-            <Route path="/fib" element={<Fib />} />
-        </Routes>
-    </Router>
+const rootPath = '/memory_leaks'
+const router = createBrowserRouter([
+    {
+        path: rootPath,
+        element: <Menu/>,
+    },
+    {
+        path: rootPath + "/analytics",
+        element: <Analitic />,
+    },
+    {
+        path: rootPath + "/listener",
+        element: <RickAndMorty />,
+    },
+    {
+        path: rootPath + '/manyRequest',
+        element: <ManyRequest />
+    },
+    {
+        path: rootPath + '/manyRequest2',
+        element: <ManyRequest2 />
+    },
+    {
+        path: rootPath + "/eventResize",
+        element: <EventResize />,
+    },
+    {
+        path: rootPath + "/fib",
+        element: <Fib />,
+    }
+]);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+    <RouterProvider
+        router={router}
+    />
 );
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(<App />);
