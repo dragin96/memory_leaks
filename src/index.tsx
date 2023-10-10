@@ -14,7 +14,7 @@ import ManyRequest2 from "./page/manyRequest/manyRequest2";
 import EventResize from "./page/evenResize";
 import {Fib} from "./page/fib";
 
-const rootPath = '/memory_leaks'
+export const rootPath = '/memory_leaks'
 const router = createBrowserRouter([
     {
         path: rootPath,
