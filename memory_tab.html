@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button id="create" onclick="create()">add list</button>
+<button id="grow" onclick="grow()">Добавить много данных</button>
+<button id="growWithClean" onclick="growWithClean()">Добавить много данных очищая предыдущие</button>
+</body>
+<script>
+    const element = document.getElementById('create');
+    // утечка дом
+    let detachedTree;
+    function create() {
+        console.log('creat')
+        const ul = document.createElement('ul');
+        for (let i = 0; i < 1000; i++) {
+            const li = document.createElement('li');
+            li.textContent = 'item ' + i;
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+        detachedTree = ul;
+    }
+    // большой массив
+    let x = [];
+
+    function grow() {
+        for (let i = 0; i < 5; i++) {
+            x.push(new Array(1000000).join('x'));
+        }
+
+    }
+
+    function growWithClean() {
+        x = []
+        for (let i = 0; i < 5; i++) {
+            x.push(new Array(1000000).join('x'));
+        }
+
+    }
+
+</script>
+</html>

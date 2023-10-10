@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Leak Example</title>
+</head>
+<body>
+
+<button id="create-leak">Create Leak</button>
+<button id="clear-leak">Clear Leak</button>
+
+<script type="text/javascript">
+    let leakyDataHolder = null;
+
+    function createLeak() {
+        const largeData = new Array(1000000).fill('leak');
+        leakyDataHolder = function() {
+            console.log(largeData);
+        };
+    }
+
+    function clearLeak() {
+        leakyDataHolder = null;
+    }
+
+    document.getElementById('create-leak').addEventListener('click', createLeak);
+    document.getElementById('clear-leak').addEventListener('click', clearLeak);
+</script>
+
+</body>
+</html>
