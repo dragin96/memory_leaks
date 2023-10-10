@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
-import {Alert} from "./components/Alert/Alert";
+import '../App.css';
+import {Alert} from "../components/Alert/Alert";
 
 function Analitic() {
     const [color, setColor] = useState("red");

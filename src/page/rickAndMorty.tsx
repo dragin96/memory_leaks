@@ -15,6 +15,7 @@ export default function () {
                             cancelToken: source.token, // Передаем токен отмены запроса
                         }
                     );
+                    await new Promise(res => setTimeout(res, 200));
                     // @ts-ignore
                     setCharacters((prevCharacters) => [...prevCharacters, result.data]);
                 }
@@ -43,10 +44,16 @@ export default function () {
                 characters.map((character: any) => (
                     <div key={character.id}>
                         <h2>{character.name}</h2>
-                        <img src={character.image} alt={character.name} />
+                        <img width="250" height="250" src={character.image} alt={character.name} />
                     </div>
                 ))
             )}
         </div>
     );
 }
+
+
+const user = {
+    name: 'alex',
+    age: 29
+};
