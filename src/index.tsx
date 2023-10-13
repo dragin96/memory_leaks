@@ -17,34 +17,34 @@ import {Fib} from "./page/fib";
 export const rootPath = '/memory_leaks'
 const router = createBrowserRouter([
     {
-        path: rootPath,
+        path: '/',
         element: <Menu/>,
     },
     {
-        path: rootPath + "/analytics",
+        path: "/analytics",
         element: <Analitic />,
     },
     {
-        path: rootPath + "/listener",
+        path: "/listener",
         element: <RickAndMorty />,
     },
     {
-        path: rootPath + '/manyRequest',
+        path: '/manyRequest',
         element: <ManyRequest />
     },
     {
-        path: rootPath + '/manyRequest2',
+        path: '/manyRequest2',
         element: <ManyRequest2 />
     },
     {
-        path: rootPath + "/eventResize",
+        path: "/eventResize",
         element: <EventResize />,
     },
     {
-        path: rootPath + "/fib",
+        path: "/fib",
         element: <Fib />,
     }
-]);
+], {basename: rootPath});
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <RouterProvider

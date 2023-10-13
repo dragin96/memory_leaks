@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import {Link} from "react-router-dom";
-import {rootPath} from "../index";
 
 function EventResize() {
     useEffect(() => {
@@ -17,7 +16,7 @@ function EventResize() {
 
     return (
         <div className="App">
-            <Link to={rootPath + "/"}>Home</Link>
+            <Link to={"/"}>Home</Link>
             <h1>Пример утечки памяти в React c добавлением событием</h1>
         </div>
     );

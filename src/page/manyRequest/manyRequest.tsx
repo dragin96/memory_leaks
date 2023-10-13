@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from "react-router-dom";
-import {rootPath} from "../../index";
 
 interface IPostID {
     id: number,
@@ -24,7 +23,7 @@ function UserPosts({ userId = 1 }) {
 
     return (
         <div>
-            <Link to={rootPath + "/"}>Home</Link>
+            <Link to={"/"}>Home</Link>
             <button onClick={() => setReload(true)}>Reload Posts</button>
     <ul>
     {posts.map(post => (
