@@ -13,6 +13,8 @@ import ManyRequest from "./page/manyRequest/manyRequest";
 import ManyRequest2 from "./page/manyRequest/manyRequest2";
 import EventResize from "./page/evenResize";
 import {Fib} from "./page/fib";
+import Post from "./page/post/post";
+import Post2 from "./page/post2/post2";
 
 export const rootPath = '/memory_leaks'
 const router = createBrowserRouter([
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
     {
         path: "/fib",
         element: <Fib />,
+    },
+    {
+        path: "/post",
+        element: <Post />,
+    },
+    {
+        path: "/post2",
+        element: <Post2 />,
     }
 ], {basename: rootPath});
 

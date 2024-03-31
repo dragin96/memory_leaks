@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty API Data Display</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            background: #333;
+            padding: 15px;
+            color: white;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 15px;
+        }
+
+        /* Add additional styling as needed */
+
+    </style>
+</head>
+<body>
+<div id="sidebar" class="sidebar">
+    <!-- Menu content here -->
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+</div>
+<div id="main-content" class="main-content">
+    <!-- API data will be inserted here -->
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('https://rickandmortyapi.com/api/character/')
+            .then(response => response.json())
+            .then(data => {
+                const mainContent = document.getElementById('main-content');
+                data.results.forEach(character => {
+                    const div = document.createElement('div');
+                    div.className = 'character';
+                    div.innerHTML = `
+          <h2>${character.name}</h2>
+          <img src="${character.image}" alt="${character.name}">
+          <p>Species: ${character.species}</p>
+          <p>Status: ${character.status}</p>
+        `;
+                    mainContent.appendChild(div);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    });
+
+</script>
+</body>
+</html>
