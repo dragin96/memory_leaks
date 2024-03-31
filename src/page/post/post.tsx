@@ -7,7 +7,7 @@ const Posts = () => {
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then<{title: string; body: string}[]>(response => response.json())
             .then(data => {
-                const expandedData = [...Array(7)].flatMap(() => data); // Умножение данных для демонстрации
+                const expandedData = [...Array(10)].flatMap(() => data); // Умножение данных для демонстрации
                 // @ts-ignore
                 setPosts(expandedData);
             })
