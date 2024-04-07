@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/memory_leaks/static/css/main.0c4441c9.css",
-    "main.js": "/memory_leaks/static/js/main.402ad7d3.js",
+    "main.css": "/memory_leaks/static/css/main.a98d3ac5.css",
+    "main.js": "/memory_leaks/static/js/main.5bec163e.js",
     "index.html": "/memory_leaks/index.html",
-    "main.0c4441c9.css.map": "/memory_leaks/static/css/main.0c4441c9.css.map",
-    "main.402ad7d3.js.map": "/memory_leaks/static/js/main.402ad7d3.js.map"
+    "main.a98d3ac5.css.map": "/memory_leaks/static/css/main.a98d3ac5.css.map",
+    "main.5bec163e.js.map": "/memory_leaks/static/js/main.5bec163e.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c4441c9.css",
-    "static/js/main.402ad7d3.js"
+    "static/css/main.a98d3ac5.css",
+    "static/js/main.5bec163e.js"
   ]
 }
