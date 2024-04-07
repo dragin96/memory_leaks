@@ -29,11 +29,7 @@ const Posts = () => {
                 const color = getRandomColor();
                 return (
                     <div key={index} className="post">
-                        <div style={{
-                            backgroundImage: `linear-gradient(45deg, ${color} ${index * 3}%, transparent ${index * 4}%, transparent ${index * 5}%, ${color} ${index * 6}%, ${color} ${index * 7}%, transparent ${index * 8}%, transparent)`
-                        }} className="heavy-load"></div>
                         <h3>{post.title}</h3>
-                        <img src={"https://via.placeholder.com/600x" +Math.floor(Math.random()*index)}  alt="Image" />
                         <p>{post.body}</p>
                     </div>
                 );

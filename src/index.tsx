@@ -15,6 +15,7 @@ import EventResize from "./page/evenResize";
 import {Fib} from "./page/fib";
 import Post from "./page/post/post";
 import Post2 from "./page/post2/post2";
+import Cats from "./page/cats/cats";
 
 export const rootPath = '/memory_leaks'
 const router = createBrowserRouter([
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
     {
         path: "/post2",
         element: <Post2 />,
+    },
+    {
+        path: "/cat",
+        element: <Cats />,
     }
 ], {basename: rootPath});
 

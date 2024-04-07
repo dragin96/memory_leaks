@@ -1,0 +1,14 @@
+#demo p img {
+    width: 400px;
+    position: relative;
+    cursor: pointer;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+#demo p.hover img:hover {
+    box-shadow: 0 0 12px 13px #ccc;
+    top: -12px;
+    height: 105%;
+    left: 10px;
+}

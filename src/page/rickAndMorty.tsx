@@ -10,15 +10,15 @@ export default function () {
             try {
                 for (let i = 1; i <= 100; i++) {
                     const result = await axios.get(
-                        `https://rickandmortyapi.com/api/character/${i}`,
+                        `https://rickandmortyapi.com/api/character/?page=${i}`,
                         {
                             cancelToken: source.token, // Передаем токен отмены запроса
                         }
                     );
-                    await new Promise(res => setTimeout(res, 200));
+                    // await new Promise(res => setTimeout(res, 200));
                     // @ts-ignore
-                    setCharacters((prevCharacters) => [...prevCharacters, result.data]);
-                }
+                    setCharacters((prevCharacters) => [...prevCharacters, ...result.data.results, ...result.data.results, ...result.data.results]);}
+
             } catch (error) {
                 if (axios.isCancel(error)) {
                     console.log("Request cancelled:", error.message);
@@ -38,7 +38,7 @@ export default function () {
     return (
         <div>
             <Link to={"/"}>Home</Link>
-            {characters.length === 0 ? (
+            {characters.length < 98 ? (
                 <div>Loading...</div>
             ) : (
                 characters.map((character: any) => (
